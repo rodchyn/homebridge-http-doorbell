@@ -1,6 +1,6 @@
 {
   "name": "homebridge-rodchyn-http-doorbell",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Homebridge plugin for a remote doorbell based on http",
   "main": "index.js",
   "scripts": {

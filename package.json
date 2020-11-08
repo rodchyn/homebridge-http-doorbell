@@ -1,6 +1,6 @@
 {
-  "name": "homebridge-http-doorbell",
-  "version": "1.3.0",
+  "name": "homebridge-rodchyn-http-doorbell",
+  "version": "1.0.0",
   "description": "Homebridge plugin for a remote doorbell based on http",
   "main": "index.js",
   "scripts": {
@@ -8,20 +8,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aprosvetova/homebridge-http-doorbell.git"
+    "url": "git+https://github.com/rodchyn/homebridge-http-doorbell.git"
   },
   "keywords": [
     "homebridge-plugin",
     "homebridge",
     "homekit",
-    "doorbell"
+    "doorbell",
+    "rodchyn"
   ],
-  "author": "Anna Prosvetova",
+  "author": "Yura Rodchyn",
   "license": "WTFPL-2",
   "bugs": {
-    "url": "https://github.com/aprosvetova/homebridge-http-doorbell/issues"
+    "url": "https://github.com/rodchyn/homebridge-http-doorbell/issues"
   },
-  "homepage": "https://github.com/aprosvetova/homebridge-http-doorbell#readme",
+  "homepage": "https://github.com/rodchyn/homebridge-http-doorbell#readme",
   "engines": {
     "node": ">=0.12.0",
     "homebridge": ">=0.2.0"

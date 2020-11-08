@@ -6,7 +6,7 @@ module.exports = function(homebridge) {
     Service = homebridge.hap.Service;
     Characteristic = homebridge.hap.Characteristic;
 
-    homebridge.registerPlatform("homebridge-http-doorbell", "http-doorbell", HTTPDoorbell);
+    homebridge.registerPlatform("homebridge-rodchyn-http-doorbell", "http-doorbell", HTTPDoorbell);
 };
 
 function HTTPDoorbell(log, config) {
@@ -78,6 +78,7 @@ DoorbellAccessory.prototype.getState = function(callback) {
 }
 
 DoorbellAccessory.prototype.ring = function() {
+    self.log("BEEP! BOOP!");
     this.binaryState = 1;
     this.service.getCharacteristic(Characteristic.ProgrammableSwitchEvent).updateValue(this.binaryState == 1);
     if (this.timeout) {
@@ -89,4 +90,24 @@ DoorbellAccessory.prototype.ring = function() {
         self.service.getCharacteristic(Characteristic.ProgrammableSwitchEvent).updateValue(self.binaryState == 1);
         self.timeout = null;
     }, self.duration * 1000);
+}
+
+
+DoorbellAccessory.prototype.identify = function(callback) {
+    this.log("Identify requested!");
+
+    var targetChar = this.service
+    .getCharacteristic(Characteristic.ProgrammableSwitchEvent);
+
+    this.log("targetChar:", targetChar);
+
+    if (targetChar.value == "1"){
+	targetChar.setValue(0);
+	this.log("Toggle state to 0");
+    }
+    else{
+	targetChar.setValue(1);
+	this.log("Toggle state to 1");
+    }
+    callback(); // success
 }
